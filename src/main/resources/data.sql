@@ -8,3 +8,4 @@ CREATE TABLE tbl_funcionario(
 );
 INSERT INTO `tbl_funcionario` (`id`, `matricula`, `nome`, `funcao`, `nome_usuario`, `senha`) VALUES ('1', '00001', 'Guto', 'Estagiário', 'guto', '1234');
 INSERT INTO `tbl_funcionario` (`id`, `matricula`, `nome`, `funcao`, `nome_usuario`, `senha`) VALUES ('2', '00002', 'João', 'Comprador', 'joao', '3421');
+INSERT INTO `tbl_funcionario` (`id`, `matricula`, `nome`, `funcao`, `nome_usuario`, `senha`) VALUES ('3', '00002', 'Mariana', 'Compradora', 'mariana', '54321');

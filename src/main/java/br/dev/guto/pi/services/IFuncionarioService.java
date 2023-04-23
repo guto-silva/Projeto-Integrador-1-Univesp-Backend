@@ -8,7 +8,8 @@ import java.util.List;
 
 public interface IFuncionarioService {
 
-    public List<Funcionario> recuperarFuncionarios();
+    public List<FuncionarioDTO> recuperarFuncionarios();
     public FuncionarioDTO recuperarFuncionarioPorId(Long id);
+    public Funcionario cadastrarNovoFuncionario(Funcionario novoFuncionario);
 
 }

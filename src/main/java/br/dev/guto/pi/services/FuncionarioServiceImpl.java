@@ -16,8 +16,8 @@ public class FuncionarioServiceImpl implements IFuncionarioService{
     private FuncionarioRepository funcionarioRepository;
 
     @Override
-    public List<Funcionario> recuperarFuncionarios() {
-        return (List<Funcionario>)funcionarioRepository.findAll();
+    public List<FuncionarioDTO> recuperarFuncionarios() {
+        return FuncionarioDTO.converter((List<Funcionario>)funcionarioRepository.findAll());
     }
 
     @Override
@@ -27,5 +27,10 @@ public class FuncionarioServiceImpl implements IFuncionarioService{
             return new FuncionarioDTO(funcionario);
         }
        return null;
+    }
+
+    @Override
+    public Funcionario cadastrarNovoFuncionario(Funcionario novoFuncionario) {
+        return funcionarioRepository.save(novoFuncionario);
     }
 }

@@ -6,6 +6,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class FuncionarioDTO {
@@ -22,6 +24,24 @@ public class FuncionarioDTO {
         this.matricula = funcionario.get().getMatricula();
         this.nome = funcionario.get().getNome();
         this.funcao = funcionario.get().getFuncao();
+    }
+
+    public FuncionarioDTO(Funcionario funcionario) {
+        this.id = funcionario.getId();
+        this.matricula = funcionario.getMatricula();
+        this.nome = funcionario.getNome();
+        this.funcao = funcionario.getFuncao();
+    }
+
+    public static List<FuncionarioDTO> converter(List<Funcionario> funcionarios) {
+
+        List<FuncionarioDTO> dtos = new ArrayList<>();
+
+        for (Funcionario funcionario : funcionarios) {
+            FuncionarioDTO funcionarioDTO = new FuncionarioDTO(funcionario);
+            dtos.add(funcionarioDTO);
+        }
+        return dtos;
     }
 
     public Long getId() {

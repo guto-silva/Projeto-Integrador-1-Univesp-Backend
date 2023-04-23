@@ -18,17 +18,22 @@ public class FuncionarioController {
     @Autowired
     private IFuncionarioService iFuncionarioService;
 
-    @GetMapping("/funcionarios")
-    public ResponseEntity<List<Funcionario>> recuperarFuncionarios() {
+    @GetMapping("/employees")
+    public ResponseEntity<List<FuncionarioDTO>> recuperarFuncionarios() {
         return ResponseEntity.ok(iFuncionarioService.recuperarFuncionarios());
     }
 
-    @GetMapping("/funcionario/{id}")
+    @GetMapping("/employee/{id}")
     public ResponseEntity<FuncionarioDTO> recuperarFuncionarioPorId(@PathVariable Long id) {
         if(iFuncionarioService.recuperarFuncionarioPorId(id) != null)
             return ResponseEntity.status(200).body(iFuncionarioService.recuperarFuncionarioPorId(id));
 
         return ResponseEntity.notFound().build();
+    }
+
+    @PostMapping("/employee")
+    public ResponseEntity<Funcionario> cadastrarNovoFuncionario(@RequestBody Funcionario novoFuncionario) {
+        return ResponseEntity.status(201).body(iFuncionarioService.cadastrarNovoFuncionario(novoFuncionario));
     }
 }
 
