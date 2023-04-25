@@ -33,6 +33,7 @@ public class FuncionarioController {
 
     @PostMapping("/employee")
     public ResponseEntity<Funcionario> cadastrarNovoFuncionario(@RequestBody Funcionario novoFuncionario) {
+        System.out.println(novoFuncionario);
         return ResponseEntity.status(201).body(iFuncionarioService.cadastrarNovoFuncionario(novoFuncionario));
     }
 }

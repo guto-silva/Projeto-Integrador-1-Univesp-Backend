@@ -9,15 +9,15 @@ public class Funcionario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @Column(name = "matricula", length = 20)
+    @Column(name = "matricula", length = 20, nullable = false)
     private String matricula;
     @Column(name = "nome", length = 50, nullable = false)
     private String nome;
-    @Column(name = "funcao", length = 45)
+    @Column(name = "funcao", length = 45, nullable = false)
     private String funcao;
     @Column(name = "nome_usuario", length = 45, unique = true)
     private String nomeUsuario;
-    @Column(name = "senha", length = 255)
+    @Column(name = "senha", length = 255, nullable = false)
     private String senha;
 
     public Long getId() {
@@ -66,5 +66,17 @@ public class Funcionario {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    @Override
+    public String toString() {
+        return "Funcionario{" +
+                "id=" + id +
+                ", matricula='" + matricula + '\'' +
+                ", nome='" + nome + '\'' +
+                ", funcao='" + funcao + '\'' +
+                ", nomeUsuario='" + nomeUsuario + '\'' +
+                ", senha='" + senha + '\'' +
+                '}';
     }
 }
