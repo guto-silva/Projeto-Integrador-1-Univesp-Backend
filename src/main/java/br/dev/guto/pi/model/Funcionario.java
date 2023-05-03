@@ -9,7 +9,7 @@ public class Funcionario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @Column(name = "matricula", length = 20, nullable = false)
+    @Column(name = "matricula", length = 20, nullable = false, unique = true)
     private String matricula;
     @Column(name = "nome", length = 50, nullable = false)
     private String nome;
@@ -17,7 +17,7 @@ public class Funcionario {
     private String funcao;
     @Column(name = "nome_usuario", length = 45, unique = true)
     private String nomeUsuario;
-    @Column(name = "senha", length = 255, nullable = false)
+    @Column(name = "senha", length = 255)
     private String senha;
 
     public Long getId() {

@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ProcessoRepository extends CrudRepository<Processo, Long> {
+
 }
