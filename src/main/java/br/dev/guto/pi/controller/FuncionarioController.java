@@ -53,7 +53,7 @@ public class FuncionarioController {
     @PutMapping("/employee/edit/{id}")
     public ResponseEntity<Funcionario> atualizarFuncionario(@PathVariable Long id, @RequestBody Funcionario funcionario) {
         try {
-            System.out.println(funcionario);
+//            System.out.println(funcionario);
             funcionario.setId(id);
             Funcionario f = iFuncionarioService.atualizarFuncionario(funcionario);
             if(f != null)
