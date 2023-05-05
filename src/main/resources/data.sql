@@ -23,7 +23,7 @@ CREATE TABLE tbl_processo(
     comprador INT
 );
 
-INSERT INTO `tbl_funcionario` (`matricula`, `nome`, `funcao`, `nome_usuario`, `senha`) VALUES ('00001', 'Guto', 'Estagiário', 'guto', '1234');
+INSERT INTO `tbl_funcionario` (`matricula`, `nome`, `funcao`, `nome_usuario`, `senha`) VALUES ('00001', 'Projeto Integrador', 'Estudante', 'univesp', '$2a$10$nU3KZg4cbOBYDLfSNxQvOOsXU8tTEaiPLgARSq9HuMFdw4CUqUc0i');
 INSERT INTO `tbl_funcionario` (`matricula`, `nome`, `funcao`, `nome_usuario`, `senha`) VALUES ('00002', 'João', 'Comprador', 'joao', '3421');
 INSERT INTO `tbl_funcionario` (`matricula`, `nome`, `funcao`, `nome_usuario`, `senha`) VALUES ('00002', 'Mariana', 'Compradora', 'mariana', '54321');
 
