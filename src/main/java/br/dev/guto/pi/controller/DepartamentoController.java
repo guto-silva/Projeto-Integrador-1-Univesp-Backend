@@ -25,7 +25,7 @@ public class DepartamentoController {
         return ResponseEntity.status(201).body(iDepartamentoService.cadastrarNovoDepartamento(novoDepartamento));
     }
 
-    @PutMapping("/department/{id}")
+    @PutMapping("/department/edit/{id}")
     public ResponseEntity<Departamento> atualizarDepartamento(@PathVariable Long id, @RequestBody Departamento departamento) {
         try {
             departamento.setId(id);

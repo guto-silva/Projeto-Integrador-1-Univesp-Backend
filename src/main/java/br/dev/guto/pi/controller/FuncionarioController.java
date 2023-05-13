@@ -42,7 +42,6 @@ public class FuncionarioController {
 
     @PostMapping("/login")
     public ResponseEntity<FuncionarioToken> efetuarLogin(@RequestBody Funcionario dadosLogin) {
-        System.out.println(dadosLogin);
         FuncionarioToken token = iFuncionarioService.realizarLogin(dadosLogin);
         if(token != null) {
             return ResponseEntity.ok(token);
@@ -53,7 +52,6 @@ public class FuncionarioController {
     @PutMapping("/employee/edit/{id}")
     public ResponseEntity<Funcionario> atualizarFuncionario(@PathVariable Long id, @RequestBody Funcionario funcionario) {
         try {
-//            System.out.println(funcionario);
             funcionario.setId(id);
             Funcionario f = iFuncionarioService.atualizarFuncionario(funcionario);
             if(f != null)
