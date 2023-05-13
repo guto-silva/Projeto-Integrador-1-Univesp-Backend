@@ -2,12 +2,14 @@ package br.dev.guto.pi.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "tbl_departamento")
 public class Departamento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "departamento_id")
     private Long id;
     @Column(name = "nome", nullable = false)
     private String nome;

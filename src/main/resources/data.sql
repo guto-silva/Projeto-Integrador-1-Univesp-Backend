@@ -1,5 +1,5 @@
 CREATE TABLE tbl_funcionario(
-    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    funcionario_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     matricula VARCHAR(20),
     nome VARCHAR(50) NOT NULL,
     funcao VARCHAR(45),
@@ -8,22 +8,24 @@ CREATE TABLE tbl_funcionario(
 );
 
 CREATE TABLE tbl_departamento(
-    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    departamento_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(50),
     numero_tramite INT
 );
 
 CREATE TABLE tbl_processo(
-    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    processo_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     numero_protocolo VARCHAR(15) NOT NULL UNIQUE,
     numero_requisicao VARCHAR(10),
     modalidade INT,
     descricao VARCHAR(255),
     departamento_origem INT,
-    comprador INT
+    comprador INT,
+    FOREIGN KEY (departamento_origem) REFERENCES tbl_departamento(departamento_id),
+    FOREIGN KEY (comprador) REFERENCES tbl_funcionario(funcionario_id)
 );
 
-INSERT INTO `tbl_funcionario` (`matricula`, `nome`, `funcao`, `nome_usuario`, `senha`) VALUES ('00001', 'Projeto Integrador', 'Estudante', 'univesp', '$2a$10$nU3KZg4cbOBYDLfSNxQvOOsXU8tTEaiPLgARSq9HuMFdw4CUqUc0i');
+INSERT INTO `tbl_funcionario` (`matricula`, `nome`, `funcao`, `nome_usuario`, `senha`) VALUES ('00001', 'Univesp', 'Estudante', 'univesp', '$2a$10$nU3KZg4cbOBYDLfSNxQvOOsXU8tTEaiPLgARSq9HuMFdw4CUqUc0i');
 INSERT INTO `tbl_funcionario` (`matricula`, `nome`, `funcao`, `nome_usuario`, `senha`) VALUES ('00002', 'João', 'Comprador', 'joao', '3421');
 INSERT INTO `tbl_funcionario` (`matricula`, `nome`, `funcao`, `nome_usuario`, `senha`) VALUES ('00002', 'Mariana', 'Compradora', 'mariana', '54321');
 
